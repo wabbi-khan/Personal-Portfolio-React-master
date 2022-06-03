@@ -10,11 +10,12 @@ import "./App.css";
 // import Footer from "./components/Footer/Footer";
 import { useContext } from "react";
 import { themeContext } from "./Context";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./components/login/Login";
-import Home from "./components/homePage/Home";
 import SignUp from "./components/signup/SignUp";
+import Home from "./components/homePage/Home";
 function App() {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;

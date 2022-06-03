@@ -32,15 +32,15 @@ const Login = () => {
           <Form.Group className='mb-3' controlId='formBasicCheckbox'>
             <Form.Check type='checkbox' label='Check me out' />
           </Form.Group>
-          <Link to='/'>
-            <Button
-              className='button n-button border-none'
-              style={{ border: "none" }}
-              type='submit'
-            >
-              Login In
-            </Button>
-          </Link>
+          {/* <Link to='/'> */}
+          <Button
+            className='button n-button'
+            style={{ border: "none", cursor: "pointer" }}
+            type='submit'
+          >
+            Log In
+          </Button>
+          {/* </Link> */}
         </Form>
       </div>
       <Footer />
