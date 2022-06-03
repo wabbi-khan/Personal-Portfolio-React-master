@@ -6,7 +6,7 @@ import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import Resume from './resume.pdf';
+import Resume from "./resume.pdf";
 
 const Services = () => {
   // context
@@ -20,11 +20,11 @@ const Services = () => {
   };
 
   return (
-    <div className="services" id="services">
+    <div className='services' id='services'>
       {/* left side */}
-      <div className="awesome">
+      <div className='awesome'>
         {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
+        <span style={{ color: darkMode ? "white" : "" }}>Our Awesome</span>
         <span>services</span>
         <spane>
           Lorem ispum is simpley dummy text of printing of printing Lorem
@@ -32,12 +32,12 @@ const Services = () => {
           ispum is simpley dummy text of printing
         </spane>
         <a href={Resume} download>
-          <button className="button s-button">Download CV</button>
+          <button className='button s-button'>Download CV</button>
         </a>
-        <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
+        <div className='blur s-blur1' style={{ background: "#ABF1FF94" }}></div>
       </div>
       {/* right */}
-      <div className="cards">
+      <div className='cards'>
         {/* first card */}
         <motion.div
           initial={{ left: "25rem" }}
@@ -46,7 +46,7 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"Design"}
+            heading={"Employees Management"}
             detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
           />
         </motion.div>
@@ -58,7 +58,7 @@ const Services = () => {
         >
           <Card
             emoji={Glasses}
-            heading={"Developer"}
+            heading={"Files Management"}
             detail={"Html, Css, JavaScript, React, Nodejs, Express"}
           />
         </motion.div>
@@ -70,15 +70,15 @@ const Services = () => {
         >
           <Card
             emoji={Humble}
-            heading={"UI/UX"}
+            heading={"Meeting Scheduler"}
             detail={
               "Lorem ispum dummy text are usually use in section where we need some random text"
             }
-            color="rgba(252, 166, 31, 0.45)"
+            color='rgba(252, 166, 31, 0.45)'
           />
         </motion.div>
         <div
-          className="blur s-blur2"
+          className='blur s-blur2'
           style={{ background: "var(--purple)" }}
         ></div>
       </div>
