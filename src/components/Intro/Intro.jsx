@@ -2,14 +2,18 @@ import React, { useContext } from "react";
 import "./Intro.css";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
-import boy from "../../img/boy.png";
+// import boy from "../../img/boy.png";
 import glassesimoji from "../../img/glassesimoji.png";
-import thumbup from "../../img/thumbup.png";
-import crown from "../../img/crown.png";
+// import thumbup from "../../img/thumbup.png";
+// import crown from "../../img/crown.png";
 import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.png";
 import LinkedIn from "../../img/linkedin.png";
 import Instagram from "../../img/instagram.png";
+import Cartoon from "../../img/cartoon.png";
+import file from "../../img/file.png";
+import meeting from "../../img/meeting.png";
+import employee from "../../img/employee.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
@@ -50,7 +54,7 @@ const Intro = () => {
       <div className='i-right'>
         <img src={Vector1} alt='' />
         <img src={Vector2} alt='' />
-        <img src={boy} alt='' />
+        <img src={Cartoon} width={300} alt='' />
         {/* animation */}
         <motion.img
           initial={{ left: "-36%" }}
@@ -66,7 +70,7 @@ const Intro = () => {
           transition={transition}
           className='floating-div'
         >
-          <FloatinDiv img={crown} text1='Web' text2='Developer' />
+          <FloatinDiv img={employee} text1='Employees' text2='Management' />
         </motion.div>
 
         {/* animation */}
@@ -77,7 +81,16 @@ const Intro = () => {
           className='floating-div'
         >
           {/* floatinDiv mein change hy dark mode ka */}
-          <FloatinDiv img={thumbup} text1='Best Design' text2='Award' />
+          <FloatinDiv img={file} text1='Files' text2='Management' />
+        </motion.div>
+        <motion.div
+          initial={{ top: "70%", left: "74%" }}
+          whileInView={{ left: "68%" }}
+          transition={transition}
+          className='floating-div'
+        >
+          {/* floatinDiv mein change hy dark mode ka */}
+          <FloatinDiv img={meeting} text1='Meeting' text2='Scheduler' />
         </motion.div>
 
         <div className='blur' style={{ background: "rgb(238 210 255)" }}></div>

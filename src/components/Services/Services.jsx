@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import "./Services.css";
 import Card from "../Card/Card";
-import HeartEmoji from "../../img/heartemoji.png";
-import Glasses from "../../img/glasses.png";
-import Humble from "../../img/humble.png";
+// import HeartEmoji from "../../img/heartemoji.png";
+// import Glasses from "../../img/glasses.png";
+// import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import Resume from "./resume.pdf";
+import file from "../../img/file.png";
+import meeting from "../../img/meeting.png";
+import employee from "../../img/employee.png";
+// import Resume from "./resume.pdf";
 
 const Services = () => {
   // context
@@ -27,13 +30,12 @@ const Services = () => {
         <span style={{ color: darkMode ? "white" : "" }}>Our Awesome</span>
         <span>services</span>
         <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
-          <br />
-          ispum is simpley dummy text of printing
+          We are Providing the Best services of Office Automation. <br /> Our
+          Motive is to provide a Solution for your Business.
         </spane>
-        <a href={Resume} download>
+        {/* <a href={Resume} download>
           <button className='button s-button'>Download CV</button>
-        </a>
+        </a> */}
         <div className='blur s-blur1' style={{ background: "#ABF1FF94" }}></div>
       </div>
       {/* right */}
@@ -45,9 +47,11 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={HeartEmoji}
+            emoji={employee}
             heading={"Employees Management"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
+            detail={
+              "Employee management is based on ideas and  procedures  developed  to  increase worker  motivation ,  productivity  and   performance .  "
+            }
           />
         </motion.div>
         {/* second card */}
@@ -57,9 +61,11 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={Glasses}
+            emoji={file}
             heading={"Files Management"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
+            detail={
+              "A file management system is used for file maintenance (or management) operations. It is is a type of software that manages data files in a computer system. A file management system has limited capabilities and is designed to manage individual or group files, such as special office documents and records"
+            }
           />
         </motion.div>
         {/* 3rd */}
@@ -69,10 +75,10 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={Humble}
+            emoji={meeting}
             heading={"Meeting Scheduler"}
             detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
+              "The purpose of the meeting scheduler system is to support the organization of meetings - that is, to determine, for each meeting request, a meeting date and location so that most of the intended participants will effectively participate."
             }
             color='rgba(252, 166, 31, 0.45)'
           />

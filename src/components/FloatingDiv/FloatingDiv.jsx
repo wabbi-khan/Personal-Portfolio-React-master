@@ -1,16 +1,15 @@
 import React from "react";
 
-import './FloatingDiv.css'
+import "./FloatingDiv.css";
 
-
-const FloatinDiv = ({img, text1, text2}) => {
+const FloatinDiv = ({ img, text1, text2 }) => {
   return (
     // darkMode
-    <div className="floatingDiv">
-      <img src={img} alt="" />
+    <div className='floatingDiv' style={{ boxShadow: "4px 5px orange" }}>
+      <img src={img} alt='' width={100} />
       <span>
         {text1}
-        <br/>
+        <br />
         {text2}
       </span>
     </div>
