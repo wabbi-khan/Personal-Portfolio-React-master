@@ -13,6 +13,7 @@ const SignUp = () => {
 
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  // const [confirmPassword, setConfrimPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const register = async (e) => {
@@ -47,7 +48,12 @@ const SignUp = () => {
         }}
       >
         <Form onSubmit={register}>
-          <h1> {errorMessage !== "" ? <h4> {errorMessage} </h4> : null} </h1>
+          <h1>
+            {" "}
+            {errorMessage !== "" ? (
+              <h6 style={{ color: "red" }}> {errorMessage} </h6>
+            ) : null}{" "}
+          </h1>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
             <Form.Control

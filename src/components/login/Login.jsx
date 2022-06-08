@@ -49,11 +49,16 @@ const Login = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "-100px",
+          paddingBottom: "150px",
         }}
       >
         <Form onSubmit={login}>
-          <h1> {errorMessage !== "" ? <h4> {errorMessage} </h4> : null} </h1>
+          <h1>
+            {" "}
+            {errorMessage !== "" ? (
+              <h6 style={{ color: "red" }}> {errorMessage} </h6>
+            ) : null}{" "}
+          </h1>
 
           <Form.Group className='mb-3'>
             <Form.Label>Email address</Form.Label>
