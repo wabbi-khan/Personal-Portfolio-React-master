@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Form, Button } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -41,7 +41,7 @@ const Login = () => {
     <div>
       <Navbar />
       <div
-        className='w-100'
+        // className='w-100'
         style={{
           display: "flex",
           justifyContent: "center",
@@ -51,11 +51,12 @@ const Login = () => {
         }}
       >
         <Form onSubmit={login}>
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
+          <Form.Group className='mb-3'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='Enter email'
+              required
               onChange={(event) => {
                 setLoginEmail(event.target.value);
               }}
@@ -65,28 +66,43 @@ const Login = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
+          <Form.Group className='mb-3'>
             <Form.Label>Password</Form.Label>
             <Form.Control
               type='password'
+              required
               placeholder='Password'
               onChange={(event) => {
                 setLoginPassword(event.target.value);
               }}
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formBasicCheckbox'>
+          <Form.Group className='mb-3 d-flex'>
             <Form.Check type='checkbox' label='Check me out' />
+            <Link to='/'>
+              <p className='px-4'>Forgotten password?</p>
+            </Link>
           </Form.Group>
-          {/* <Link to='/'> */}
-          <Button
-            className='button n-button'
-            style={{ border: "none", cursor: "pointer" }}
-            type='submit'
+          <div className='d-flex'>
+            <Button
+              className='button n-button'
+              style={{ border: "none", cursor: "pointer" }}
+              type='submit'
+            >
+              Log In
+            </Button>
+          </div>
+          <p
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "auto",
+              paddingTop: "10px",
+            }}
           >
-            Log In
-          </Button>
-          {/* </Link> */}
+            Already have an accout? &nbsp;
+            <Link to='/'>Sign up</Link>
+          </p>
         </Form>
       </div>
       <Footer />

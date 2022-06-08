@@ -36,17 +36,17 @@ const navbar = () => {
             </li>
             <li>
               <Link to='portfolio' spy={true} smooth={true}>
-                Protfolio
+                Dashboard
               </Link>
             </li>
             <li>
               <Link to='testimonial' spy={true} smooth={true}>
-                Testimonial
+                Team
               </Link>
             </li>{" "}
             <li>
               <NavLink className='link' to='/login'>
-                Login
+                LogIn
               </NavLink>
             </li>{" "}
             <li>
