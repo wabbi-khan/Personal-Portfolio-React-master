@@ -33,9 +33,9 @@ const Intro = () => {
           {/* yahan change hy darkmode ka */}
           <span style={{ color: darkMode ? "white" : "" }}>Hy! We Are</span>
           <span>Solution Provider</span>
-          <span>
-            Frontend Developer with high level of experience in web designing
-            and development, producting the Quality work
+          <span style={{ fontSize: "15px" }}>
+            Our performance is your success. Our passion is innovation. Our
+            expertise is unmatched. <br /> We get you more
           </span>
         </div>
         <Link to='contact' smooth={true} spy={true}>

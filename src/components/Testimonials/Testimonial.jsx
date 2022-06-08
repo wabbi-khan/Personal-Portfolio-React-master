@@ -23,20 +23,20 @@ const Testimonial = () => {
       Name: "Abdul Wahab Khan",
 
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "My name is Wahab Khan. I’m the Web-developer at Smart Solutions. I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. I see myself as a relentless problem-solver, and I’m always looking for a new challenge.",
     },
     {
       img: profilePic3,
       Name: "Syed Saif",
 
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "My name is Syed Saif. I’m the Graphic designer at Smart Solutions. I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. I see myself as a relentless problem-solver, and I’m always looking for a new challenge.",
     },
     {
       img: profilePic4,
       Name: "Rushda Khan",
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "My name is Rsudha Khan. I’m the  product development manager at Smart Solutions. I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. I see myself as a relentless problem-solver, and I’m always looking for a new challenge.",
     },
   ];
 

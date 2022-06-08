@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Form, Button } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -13,6 +13,7 @@ const SignUp = () => {
 
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const register = async (e) => {
     e.preventDefault();
@@ -28,22 +29,25 @@ const SignUp = () => {
     } catch (error) {
       console.log("i will apreciate you");
       console.log(error.message);
+      setErrorMessage(error.message);
     }
   };
   return (
     <div>
       <Navbar />
       <div
-        className='w-100'
+        // className='w-100'
         style={{
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "auto",
-          paddingBottom: "50px",
+          // marginTop: "-100px",
+          paddingBottom: "150px",
         }}
       >
         <Form onSubmit={register}>
+          <h1> {errorMessage !== "" ? <h4> {errorMessage} </h4> : null} </h1>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -78,18 +82,29 @@ const SignUp = () => {
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formBasicCheckbox'>
+          {/* <Form.Group className='mb-3' controlId='formBasicCheckbox'>
             <Form.Check type='checkbox' label='Check me out' />
-          </Form.Group>
-          {/* <Link to='/login'> */}
-          <Button
-            className='button n-button border-none'
-            style={{ border: "none" }}
-            type='submit'
+          </Form.Group> */}
+          <div className='d-flex'>
+            <Button
+              className='button n-button'
+              style={{ border: "none", cursor: "pointer" }}
+              type='submit'
+            >
+              Sign Up
+            </Button>
+          </div>
+          <p
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "auto",
+              paddingTop: "10px",
+            }}
           >
-            Sign Up
-          </Button>
-          {/* </Link> */}
+            Already have an accout? &nbsp;
+            <Link to='/login'>Log in</Link>
+          </p>
         </Form>
       </div>
       <Footer />

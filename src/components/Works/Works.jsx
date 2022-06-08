@@ -24,15 +24,9 @@ const Works = () => {
             Works for All these
           </span>
           <span>Brands & Clients</span>
-          <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
-            <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
-            <br />
-            y dummy text of printingLorem
-            <br />
-            ispum is simpley dummy text of printing
+          <spane style={{ fontSize: "15px" }}>
+            IT Solution 24x7 <br /> Provide ground-breaking services to its
+            customers in almost every niche
           </spane>
           {/* <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>

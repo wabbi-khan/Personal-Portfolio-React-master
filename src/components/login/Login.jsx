@@ -13,6 +13,7 @@ const Login = () => {
   // const navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [setUser] = useState({});
 
@@ -34,6 +35,7 @@ const Login = () => {
       console.log(user);
     } catch (error) {
       console.log(error.message);
+      setErrorMessage(error.message);
     }
   };
 
@@ -43,14 +45,16 @@ const Login = () => {
       <div
         // className='w-100'
         style={{
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "auto",
-          paddingBottom: "50px",
+          marginTop: "-100px",
         }}
       >
         <Form onSubmit={login}>
+          <h1> {errorMessage !== "" ? <h4> {errorMessage} </h4> : null} </h1>
+
           <Form.Group className='mb-3'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -65,7 +69,6 @@ const Login = () => {
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
-
           <Form.Group className='mb-3'>
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -78,11 +81,12 @@ const Login = () => {
             />
           </Form.Group>
           <Form.Group className='mb-3 d-flex'>
-            <Form.Check type='checkbox' label='Check me out' />
+            <Form.Check type='checkbox' label='Remember' />
             <Link to='/'>
               <p className='px-4'>Forgotten password?</p>
             </Link>
           </Form.Group>
+
           <div className='d-flex'>
             <Button
               className='button n-button'
@@ -100,8 +104,8 @@ const Login = () => {
               paddingTop: "10px",
             }}
           >
-            Already have an accout? &nbsp;
-            <Link to='/'>Sign up</Link>
+            Don't have an accout? &nbsp;
+            <Link to='/signup'>Sign up</Link>
           </p>
         </Form>
       </div>
