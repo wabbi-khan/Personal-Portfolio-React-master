@@ -48,12 +48,23 @@ const SignUp = () => {
         }}
       >
         <Form onSubmit={register}>
-          <h1>
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              textAlign: "center",
+              color: "#fb982f",
+              fontSize: "35px",
+            }}
+          >
+            Welcome to Sign up
+          </span>
+          <h5>
             {" "}
             {errorMessage !== "" ? (
               <h6 style={{ color: "red" }}> {errorMessage} </h6>
             ) : null}{" "}
-          </h1>
+          </h5>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
             <Form.Control

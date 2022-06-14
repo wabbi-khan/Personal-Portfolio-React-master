@@ -4,41 +4,35 @@ import Footer from "../Footer/Footer";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-// import { useNavigate } from "react-router-dom";
-// import { getToPathname } from "react-router/lib/router";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  // const navigate = useNavigate();
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+const SignUp = () => {
+  const Router = useNavigate();
+
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  // const [confirmPassword, setConfrimPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-
-  const login = async (e) => {
+  const register = async (e) => {
     e.preventDefault();
 
     try {
-      const user = await signInWithEmailAndPassword(
+      const user = await createUserWithEmailAndPassword(
         auth,
-        loginEmail,
-        loginPassword
+        registerEmail,
+        registerPassword
       );
-      window.location.replace("https://fyp-dashboard-wheat.vercel.app");
-      // navigate("/https://fyp-dashboard-wheat.vercel.app", { replace: true });
+      Router("/login");
       console.log(user);
     } catch (error) {
+      console.log("i will apreciate you");
       console.log(error.message);
       setErrorMessage(error.message);
     }
   };
-
   return (
     <div>
       <Navbar />
@@ -49,10 +43,11 @@ const Login = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          // marginTop: "-100px",
           paddingBottom: "150px",
         }}
       >
-        <Form onSubmit={login}>
+        <Form onSubmit={register}>
           <span
             style={{
               display: "flex",
@@ -62,7 +57,7 @@ const Login = () => {
               fontSize: "35px",
             }}
           >
-            Welcome to Log in
+            Forget Password ?
           </span>
           <h5>
             {" "}
@@ -70,46 +65,50 @@ const Login = () => {
               <h6 style={{ color: "red" }}> {errorMessage} </h6>
             ) : null}{" "}
           </h5>
-
-          <Form.Group className='mb-3'>
+          <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='Enter email'
               required
               onChange={(event) => {
-                setLoginEmail(event.target.value);
+                setRegisterEmail(event.target.value);
               }}
             />
             <Form.Text className='text-muted'>
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label>Password</Form.Label>
+
+          <Form.Group className='mb-3' controlId='formBasicPassword'>
+            <Form.Label>New Password</Form.Label>
             <Form.Control
               type='password'
-              required
               placeholder='Password'
+              required
               onChange={(event) => {
-                setLoginPassword(event.target.value);
+                setRegisterPassword(event.target.value);
               }}
             />
           </Form.Group>
-          <Form.Group className='mb-3 d-flex'>
-            <Form.Check type='checkbox' label='Remember' />
-            <Link to='/forget-password'>
-              <p className='px-4'>Forgotten password?</p>
-            </Link>
+          <Form.Group className='mb-3' controlId='formBasicPassword'>
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              type='password'
+              placeholder='Confirm Password'
+              required
+            />
           </Form.Group>
-
+          {/* <Form.Group className='mb-3' controlId='formBasicCheckbox'>
+            <Form.Check type='checkbox' label='Check me out' />
+          </Form.Group> */}
           <div className='d-flex'>
             <Button
               className='button n-button'
               style={{ border: "none", cursor: "pointer" }}
               type='submit'
             >
-              Log In
+              Log in
             </Button>
           </div>
           <p
@@ -121,7 +120,7 @@ const Login = () => {
             }}
           >
             Don't have an accout? &nbsp;
-            <Link to='/signup'>Sign up</Link>
+            <Link to='/login'>Sign up</Link>
           </p>
         </Form>
       </div>
@@ -130,4 +129,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
