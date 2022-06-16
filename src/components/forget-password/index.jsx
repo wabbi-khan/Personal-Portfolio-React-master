@@ -4,7 +4,10 @@ import Footer from "../Footer/Footer";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +23,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const user = await createUserWithEmailAndPassword(
+      const user = await sendPasswordResetEmail(
         auth,
         registerEmail,
         registerPassword
@@ -80,35 +83,13 @@ const SignUp = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>New Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Password'
-              required
-              onChange={(event) => {
-                setRegisterPassword(event.target.value);
-              }}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>Confirm Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Confirm Password'
-              required
-            />
-          </Form.Group>
-          {/* <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label='Check me out' />
-          </Form.Group> */}
           <div className='d-flex'>
             <Button
               className='button n-button'
               style={{ border: "none", cursor: "pointer" }}
               type='submit'
             >
-              Log in
+              Reset Password
             </Button>
           </div>
           <p
