@@ -7,7 +7,7 @@ const FloatinDiv = ({ img, text1, text2 }) => {
     // darkMode
     <div className='floatingDiv' style={{ boxShadow: "4px 5px orange" }}>
       <img src={img} alt='' width={100} />
-      <span>
+      <span style={{ fontSize: "20px" }}>
         {text1}
         <br />
         {text2}

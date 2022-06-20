@@ -33,13 +33,21 @@ const Intro = () => {
           {/* yahan change hy darkmode ka */}
           <span style={{ color: darkMode ? "white" : "" }}>Hy! We Are</span>
           <span>Solution Provider</span>
-          <span style={{ fontSize: "15px" }}>
+          <span style={{ fontSize: "25px", color: "black" }}>
             Our performance is your success. Our passion is innovation. Our
             expertise is unmatched. <br /> We get you more
           </span>
         </div>
         <Link to='contact' smooth={true} spy={true}>
-          <button className='button i-button' style={{ width: "150px" }}>
+          <button
+            className='btn btn-primary'
+            style={{
+              width: "150px",
+              fontSize: "20px",
+              background: "orange",
+              border: "none",
+            }}
+          >
             Contact Us
           </button>
         </Link>

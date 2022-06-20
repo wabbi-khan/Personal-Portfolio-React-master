@@ -24,7 +24,7 @@ const Works = () => {
             Works for All these
           </span>
           <span>Brands & Clients</span>
-          <spane style={{ fontSize: "15px" }}>
+          <spane style={{ fontSize: "20px", color: "black" }}>
             IT Solution 24x7 <br /> Provide ground-breaking services to its
             customers in almost every niche
           </spane>

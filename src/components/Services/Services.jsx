@@ -29,7 +29,7 @@ const Services = () => {
         {/* dark mode */}
         <span style={{ color: darkMode ? "white" : "" }}>Our Awesome</span>
         <span>services</span>
-        <spane>
+        <spane style={{ fontSize: "20px", color: "black" }}>
           We are Providing the Best services of Office Automation. <br /> Our
           Motive is to provide a Solution for your Business.
         </spane>
@@ -64,7 +64,7 @@ const Services = () => {
             emoji={file}
             heading={"Files Management"}
             detail={
-              "A file management system is used for file maintenance (or management) operations. It is is a type of software that manages data files in a computer system. A file management system has limited capabilities and is designed to manage individual or group files, such as special office documents and records"
+              "A file management system is used for file maintenance (or management) operations. It is is a type of software that manages data files in a computer system. A file management system has limited capabilities and is designed to manage individual or group files."
             }
           />
         </motion.div>
@@ -78,7 +78,7 @@ const Services = () => {
             emoji={meeting}
             heading={"Meeting Scheduler"}
             detail={
-              "The purpose of the meeting scheduler system is to support the organization of meetings - that is, to determine, for each meeting request, a meeting date and location so that most of the intended participants will effectively participate."
+              "The purpose of the meeting scheduler system is to support the organization of meetings - that is, to determine, for each meeting request, a meeting date and location so that most of the intended."
             }
             color='rgba(252, 166, 31, 0.45)'
           />

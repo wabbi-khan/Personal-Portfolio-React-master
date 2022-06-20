@@ -8,8 +8,8 @@ const Card = ({ emoji, heading, detail, color }) => {
       style={{ borderColor: { color }, width: "300px", height: "auto" }}
     >
       <img src={emoji} alt='' width={80} /> <br />
-      <span>{heading}</span>
-      <span>{detail}</span>
+      <span style={{ color: "black", fontSize: "25px" }}>{heading}</span>
+      <span style={{ color: "black", fontSize: "20px" }}>{detail}</span>
       {/* <button className='c-button'>LEARN MORE</button> */}
     </div>
   );
