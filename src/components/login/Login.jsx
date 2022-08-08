@@ -60,9 +60,10 @@ const Login = () => {
               textAlign: "center",
               color: "#fb982f",
               fontSize: "35px",
+              fontWeight: "600",
             }}
           >
-            Welcome to Log in
+            Log in your account
           </span>
           <h5>
             {" "}
@@ -120,7 +121,7 @@ const Login = () => {
               paddingTop: "10px",
             }}
           >
-            Don't have an accout? &nbsp;
+            Don't have an account? &nbsp;
             <Link to='/signup'>Sign up</Link>
           </p>
         </Form>

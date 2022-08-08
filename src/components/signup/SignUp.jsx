@@ -55,6 +55,7 @@ const SignUp = () => {
               textAlign: "center",
               color: "#fb982f",
               fontSize: "35px",
+              fontWeight: "600",
             }}
           >
             Welcome to Sign up
@@ -66,7 +67,7 @@ const SignUp = () => {
             ) : null}{" "}
           </h5>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Email address</Form.Label>
+            <Form.Label> Email address</Form.Label>
             <Form.Control
               type='email'
               placeholder='Enter email'
@@ -75,9 +76,6 @@ const SignUp = () => {
                 setRegisterEmail(event.target.value);
               }}
             />
-            <Form.Text className='text-muted'>
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='formBasicPassword'>
@@ -119,7 +117,7 @@ const SignUp = () => {
               paddingTop: "10px",
             }}
           >
-            Already have an accout? &nbsp;
+            Already have an account? &nbsp;
             <Link to='/login'>Log in</Link>
           </p>
         </Form>
